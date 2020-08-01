@@ -72,4 +72,4 @@ Follow the process described in the course to `eb init` a new application and `e
 ![image info](./ScreenShots/10_testing_deployed_project_success_scenario(200)_postman.png)
 
 - Not sending image_url param to the endpoint
-![image info](./ScreenShots/9_testing_deployed_project_failure_scenario(400)_postman.png)
+![image info](./ScreenShots/9_testing_deployed_project_failure_scenario(422)_postman.png)
