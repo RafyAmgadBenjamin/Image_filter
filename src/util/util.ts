@@ -36,23 +36,12 @@ export async function deleteLocalFiles(files: Array<string>) {
 // getAllFilesInFolder
 // helper function to get files in a folder on the local disk 
 // useful to list files in path
-
-export function getAllFilesInPath(path: string) {
-    var allFiles: Array<string> = [];
-    fs.readdirSync(path).forEach(file => {
-        allFiles.push(file);
+// INPUTS
+//      path: String an string of the absolute path to the directory that you want to list it's files.
+export async function getAllFilesInPath(path: string) {
+    return new Promise((resolve, reject) => {
+        fs.readdir(path, (error, files) => {
+            error ? reject(error) : resolve(files);
+        });
     });
-    return allFiles
 }
-// export async function getAllFilesInPath(path: string) {
-//     var allFiles: Array<string> = [];
-//     fs.readdir(path, (err, files) => {
-//         files.forEach(file => {
-//             console.log(file)
-//             allFiles.push(file);
-//         });
-//     });
-//     console.log("out side the loop")
-//     console.log(allFiles)
-//     return allFiles
-// }
