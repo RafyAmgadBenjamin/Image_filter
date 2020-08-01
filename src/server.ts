@@ -1,4 +1,3 @@
-import fs from 'fs';
 import bodyParser from 'body-parser';
 import express, { Router, Request, Response } from 'express';
 import { filterImageFromURL, deleteLocalFiles, getAllFilesInPath } from './util/util';
