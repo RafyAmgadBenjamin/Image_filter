@@ -66,6 +66,9 @@ Follow the process described in the course to `eb init` a new application and `e
 ##### Validate that the project deployed on `Elastic Beanstalk`
 ![image info](./deployment_screenshot/8_project_deployed_successfully_on_elastic_beanstalk.png)
 
+![image info](./deployment_screenshot/depolyed_project.png)
+
+
 ##### Testing the endpoint using `Postman`
 - Sending image_url param to the endpoint
 `http://image-filter-dev-dev.us-west-2.elasticbeanstalk.com/filteredimage?image_url=`
