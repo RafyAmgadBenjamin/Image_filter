@@ -41,12 +41,16 @@ Follow the process described in the course to `eb init` a new application and `e
 ##### Config the environment
 - Initializes your directory with the EB CLI `eb init`
 ![image info](./ScreenShots/1_eb_init.png)
+
 - Choosing application name
 ![image info](./ScreenShots/2_application_name.png)
+
 - Select the platform
 ![image info](./ScreenShots/3_select_platform.png)
+
 - select code commit and ssh key pair
 ![image info](./ScreenShots/4_codeCommit_select_keypair.png)
+
 - Update the config with deploy artifact to use our Archive.zip directory
 ![image info](./ScreenShots/5_add_deploy_artifact.png)
 
@@ -66,5 +70,6 @@ Follow the process described in the course to `eb init` a new application and `e
 - Sending image_url param to the endpoint
 `http://image-filter-dev-dev.us-west-2.elasticbeanstalk.com/filteredimage?image_url=`
 ![image info](./ScreenShots/10_testing_deployed_project_success_scenario(200)_postman.png)
+
 - Not sending image_url param to the endpoint
 ![image info](./ScreenShots/9_testing_deployed_project_failure_scenario(400)_postman.png)
