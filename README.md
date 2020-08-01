@@ -31,18 +31,40 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
 Follow the process described in the course to `eb init` a new application and `eb create` a new environment to deploy your image-filter service! Don't forget you can use `eb deploy` to push changes.
 
-## Stand Out (Optional)
+#### Project URL
+`http://image-filter-dev-dev.us-west-2.elasticbeanstalk.com/`
+#### Endpoint URL
+`http://image-filter-dev-dev.us-west-2.elasticbeanstalk.com/filteredimage`
+###### example
+`http://image-filter-dev-dev.us-west-2.elasticbeanstalk.com/filteredimage?image_url=https://www.autotrader.co.uk/used-cars/images/static/value-proposition/VauxhallCorsa@1.5x.png`
+#### Deploying steps
+##### Config the environment
+- Initializes your directory with the EB CLI `eb init`
+![image info](./ScreenShots/1_eb_init.png)
+- Choosing application name
+![image info](./ScreenShots/2_application_name.png)
+- Select the platform
+![image info](./ScreenShots/3_select_platform.png)
+- select code commit and ssh key pair
+![image info](./ScreenShots/4_codeCommit_select_keypair.png)
+- Update the config with deploy artifact to use our Archive.zip directory
+![image info](./ScreenShots/5_add_deploy_artifact.png)
 
-### Refactor the course RESTapi
+##### build the project using `NPM`
+- `npm run build` 
+![image info](./ScreenShots/6_build_project.png)
 
-If you're feeling up to it, refactor the course RESTapi to make a request to your newly provisioned image server.
 
-### Authentication
+##### Creates a new environment
+- Creates environment
+![image info](./ScreenShots/7_eb_create.png)
 
-Prevent requests without valid authentication headers.
-> !!NOTE if you choose to submit this, make sure to add the token to the postman collection and export the postman collection file to your submission so we can review!
+##### Validate that the project deployed on `Elastic Beanstalk`
+![image info](./ScreenShots/8_project_deployed_successfully_on_elastic_beanstalk.png)
 
-### Custom Domain Name
-
-Add your own domain name and have it point to the running services (try adding a subdomain name to point to the processing server)
-> !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
+##### Testing the endpoint using `Postman`
+- Sending image_url param to the endpoint
+`http://image-filter-dev-dev.us-west-2.elasticbeanstalk.com/filteredimage?image_url=`
+![image info](./ScreenShots/10_testing_deployed_project_success_scenario(200)_postman.png)
+- Not sending image_url param to the endpoint
+![image info](./ScreenShots/9_testing_deployed_project_failure_scenario(400)_postman.png)
